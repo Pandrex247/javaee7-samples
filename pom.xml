@@ -373,6 +373,8 @@
                 <payara.directory.name>payara41</payara.directory.name>
                 <payara.version.major>4</payara.version.major>
                 <payara_domain>payaradomain</payara_domain>
+                <!-- Payara4 uses a deprecated X500 package -->
+                <skipServletClientCertificate>true</skipServletClientCertificate>
             </properties>
         </profile>
 
