@@ -91,20 +91,6 @@
             </snapshots>
         </repository>
 
-        <repository>
-            <id>ossrh</id>
-            <name>Sonatype-snapshot</name>
-
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
     </repositories>
 
 
@@ -161,6 +147,16 @@
                 <artifactId>payara-client-ee7</artifactId>
                 <version>1.0.Beta3</version>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk15on</artifactId>
+                <version>1.59</version>
+            </dependency>
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcpkix-jdk15on</artifactId>
+                <version>1.59</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -268,6 +264,12 @@
             <artifactId>awaitility</artifactId>
             <version>1.6.0</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+        	<groupId>org.omnifaces</groupId>
+    		<artifactId>omniutils</artifactId>
+    		<version>0.10</version>
+    		<scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -1677,8 +1679,6 @@
                 </plugins>
             </build>
         </profile>
-
-
 
         <!--
             Activate this profile to download javadoc and sources jars. run:
