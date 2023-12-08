@@ -49,7 +49,7 @@
             Application Server versions
             (these are downloaded and installed in these versions by Maven for the CI profiles)
          -->
-        <payara.version>6.2022.1.Alpha4</payara.version>
+        <payara.version>6.2024.1-SNAPSHOT</payara.version>
         <payara_domain>domain1</payara_domain>
         <glassfish.client.version>5.0</glassfish.client.version> <!-- For remote EJB for Payara and Glassfish -->
         <glassfish.version>4.1.1</glassfish.version>
@@ -59,7 +59,7 @@
         <tomee.version>7.0.2</tomee.version>
         <tomcat.version>9.0.4</tomcat.version>
 
-        <payara.arquillian.version>3.0.alpha4</payara.arquillian.version>
+        <payara.arquillian.version>3.0.alpha8</payara.arquillian.version>
         <argLine>--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED -D...</argLine>
     </properties>
 
@@ -174,13 +174,13 @@
             </dependency>
             <dependency>
                 <groupId>org.bouncycastle</groupId>
-                <artifactId>bcprov-jdk15on</artifactId>
-                <version>1.68</version>
+                <artifactId>bcprov-jdk18on</artifactId>
+                <version>1.77</version>
             </dependency>
             <dependency>
                 <groupId>org.bouncycastle</groupId>
-                <artifactId>bcpkix-jdk15on</artifactId>
-                <version>1.68</version>
+                <artifactId>bcpkix-jdk18on</artifactId>
+                <version>1.77</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
@@ -275,7 +275,7 @@
         <dependency>
             <groupId>net.sourceforge.htmlunit</groupId>
             <artifactId>htmlunit</artifactId>
-            <version>2.48.0</version>
+            <version>2.70.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -300,7 +300,7 @@
         <dependency>
             <groupId>org.omnifaces</groupId>
             <artifactId>omniutils</artifactId>
-            <version>0.11</version>
+            <version>0.13</version>
             <scope>test</scope>
         </dependency>
         <dependency>
