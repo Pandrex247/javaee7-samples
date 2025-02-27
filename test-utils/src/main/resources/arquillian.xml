@@ -5,7 +5,7 @@
 
     <defaultProtocol type="Servlet 5.0"/>
 
-    <container qualifier="payara6">
+    <container qualifier="payara7">
         <configuration>
             <property name="domain">${payara_domain}</property>
         </configuration>

@@ -47,11 +47,11 @@
     <profiles>
         <!-- Extra modules to run for Payara 6 versions -->
         <profile>
-            <id>payara6</id>
+            <id>payara7</id>
             <activation>
                 <property>
                     <name>payara.version</name>
-                    <value>/6\.*/</value>
+                    <value>/7\.*/</value>
                 </property>
             </activation>
             <modules>
