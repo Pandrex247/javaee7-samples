@@ -59,7 +59,7 @@
         <tomee.version>7.0.2</tomee.version>
         <tomcat.version>9.0.4</tomcat.version>
 
-        <payara.arquillian.version>3.1</payara.arquillian.version>
+        <payara.arquillian.version>4.0.alpha2</payara.arquillian.version>
         <argLine>--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED -D...</argLine>
     </properties>
 
