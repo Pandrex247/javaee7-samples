@@ -9,7 +9,7 @@
 
     <artifactId>jca</artifactId>
     <packaging>pom</packaging>
-    
+
     <name>Java EE 7 Sample: jca</name>
 
     <modules>
@@ -34,6 +34,19 @@
             <artifactId>test-utils</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.resource</groupId>
+            <artifactId>jakarta.resource-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.ejb</groupId>
+            <artifactId>jakarta.ejb-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.enterprise</groupId>
+            <artifactId>cdi-tck-api</artifactId>
+            <version>4.1.0</version>
         </dependency>
     </dependencies>
 </project>

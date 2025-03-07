@@ -10,8 +10,11 @@
     <name>Java EE 7 Sample: javaee7-samples</name>
 
     <properties>
-        <arquillian.version>1.7.0.Alpha12</arquillian.version>
-        <java.min.version>11</java.min.version>
+        <arquillian.version>1.9.3.Final</arquillian.version>
+        <hamcrest.version>3.0</hamcrest.version>
+        <shrinkwrap.version>3.3.3</shrinkwrap.version>
+        <shrinkwrap-descriptors.version>2.0.0</shrinkwrap-descriptors.version>
+        <java.min.version>21</java.min.version>
         <maven.min.version>3.6.0</maven.min.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
@@ -49,7 +52,7 @@
             Application Server versions
             (these are downloaded and installed in these versions by Maven for the CI profiles)
          -->
-        <payara.version>6.2022.1.Alpha4</payara.version>
+        <payara.version>7.2025.1.Alpha1-SNAPSHOT</payara.version>
         <payara_domain>domain1</payara_domain>
         <glassfish.client.version>5.0</glassfish.client.version> <!-- For remote EJB for Payara and Glassfish -->
         <glassfish.version>4.1.1</glassfish.version>
@@ -59,7 +62,7 @@
         <tomee.version>7.0.2</tomee.version>
         <tomcat.version>9.0.4</tomcat.version>
 
-        <payara.arquillian.version>3.0.alpha4</payara.arquillian.version>
+        <payara.arquillian.version>4.0.alpha2</payara.arquillian.version>
         <argLine>--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED -D...</argLine>
     </properties>
 
@@ -187,6 +190,26 @@
                 <artifactId>junit</artifactId>
                 <version>4.13.2</version>
             </dependency>
+            <dependency>
+                <groupId>org.jboss.shrinkwrap.resolver</groupId>
+                <artifactId>shrinkwrap-resolver-impl-maven</artifactId>
+                <version>${shrinkwrap.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.shrinkwrap.resolver</groupId>
+                <artifactId>shrinkwrap-resolver-impl-maven-archive</artifactId>
+                <version>${shrinkwrap.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.shrinkwrap.resolver</groupId>
+                <artifactId>shrinkwrap-resolver-api-maven</artifactId>
+                <version>${shrinkwrap.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.shrinkwrap.descriptors</groupId>
+                <artifactId>shrinkwrap-descriptors-impl-javaee</artifactId>
+                <version>${shrinkwrap-descriptors.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -211,12 +234,8 @@
         </dependency>
         <dependency>
             <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-core</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-library</artifactId>
+            <artifactId>hamcrest</artifactId>
+            <version>${hamcrest.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -246,7 +265,6 @@
             <groupId>org.jboss.shrinkwrap.resolver</groupId>
             <artifactId>shrinkwrap-resolver-impl-maven</artifactId>
             <scope>test</scope>
-            <type>jar</type>
         </dependency>
         <dependency>
             <groupId>org.jboss.shrinkwrap.resolver</groupId>
@@ -416,8 +434,8 @@
                 </property>
             </activation>
             <properties>
-                <payara.directory.name>payara6</payara.directory.name>
-                <payara.version.major>6</payara.version.major>
+                <payara.directory.name>payara7</payara.directory.name>
+                <payara.version.major>7</payara.version.major>
             </properties>
         </profile>
 
@@ -430,8 +448,8 @@
                 </property>
             </activation>
             <properties>
-                <payara.directory.name>payara6</payara.directory.name>
-                <payara.version.major>6</payara.version.major>
+                <payara.directory.name>payara7</payara.directory.name>
+                <payara.version.major>7</payara.version.major>
             </properties>
         </profile>
 
@@ -447,6 +465,7 @@
                 <dependency>
                     <groupId>fish.payara.arquillian</groupId>
                     <artifactId>payara-client-ee9</artifactId>
+                    <version>3.1</version>
                 </dependency>
 
                 <!-- The actual Arquillian connector -->
@@ -464,6 +483,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-dependency-plugin</artifactId>
+                        <version>3.6.1</version>
                         <executions>
                             <execution>
                                 <id>unpack</id>
@@ -526,6 +546,7 @@
                 <dependency>
                     <groupId>fish.payara.arquillian</groupId>
                     <artifactId>payara-client-ee9</artifactId>
+                    <version>3.1</version>
                 </dependency>
 
                 <!-- The Arquillian connector -->
@@ -1910,6 +1931,24 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+            <id>jakarta-staging</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <repositories>
+                <repository>
+                    <id>jakarta-releases</id>
+                    <url>https://jakarta.oss.sonatype.org/content/groups/staging/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                </repository>
+            </repositories>
         </profile>
     </profiles>
 

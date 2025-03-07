@@ -6,10 +6,10 @@
         <artifactId>samples-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    
+
     <artifactId>websocket</artifactId>
     <packaging>pom</packaging>
-    
+
     <name>Java EE 7 Sample: websocket</name>
 
     <modules>
@@ -67,6 +67,18 @@
             <artifactId>test-utils</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.ejb</groupId>
+            <artifactId>jakarta.ejb-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.interceptor</groupId>
+            <artifactId>jakarta.interceptor-api</artifactId>
         </dependency>
     </dependencies>
 </project>
