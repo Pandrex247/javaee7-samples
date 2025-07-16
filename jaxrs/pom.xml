@@ -21,7 +21,9 @@
         <module>beanparam</module>
         <module>client-negotiation</module>
         <module>db-access</module>
-        <module>dynamicfilter</module>
+        <module>dynamicfilter</module>-->
+        <module>ejb-lookup</module>
+        <!-- FISH-11628 Disabled temporarily
         <module>fileupload</module>
         <module>filter</module>-->
         <module>filter-interceptor</module>
@@ -47,22 +49,6 @@
         <module>readerwriter-injection</module>-->
         <module>jaxrs-security-declarative</module>
     </modules>
-
-    <profiles>
-        <!-- Extra modules to run for Payara 6 versions -->
-        <profile>
-            <id>payara7</id>
-            <activation>
-                <property>
-                    <name>payara.version</name>
-                    <value>/7\.*/</value>
-                </property>
-            </activation>
-            <modules>
-                <module>ejb-lookup</module>
-            </modules>
-        </profile>
-    </profiles>
 
     <build>
         <plugins>
