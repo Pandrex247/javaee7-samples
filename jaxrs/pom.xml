@@ -21,9 +21,8 @@
         <module>beanparam</module>
         <module>client-negotiation</module>
         <module>db-access</module>
-        <module>dynamicfilter</module>-->
+        <module>dynamicfilter</module>
         <module>ejb-lookup</module>
-        <!-- FISH-11628 Disabled temporarily
         <module>fileupload</module>
         <module>filter</module>-->
         <module>filter-interceptor</module>
