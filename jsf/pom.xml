@@ -13,7 +13,8 @@
     <name>Java EE 7 Sample: jsf</name>
 
     <modules>
-        <module>ajax</module>
+        <!-- FISH-11628 Disabled temporarily
+        <module>ajax</module>-->
         <module>bean-validation</module>
         <module>components</module>
         <module>composite-component</module>

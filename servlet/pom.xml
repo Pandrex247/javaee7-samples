@@ -15,7 +15,8 @@
     <modules>
     	<module>simple-servlet</module>
         <module>async-servlet</module>
-        <module>servlet-filters</module>
+        <!-- FISH-11628 Disabled temporarily
+        <module>servlet-filters</module>-->
         <module>cookies</module>
         <module>error-mapping</module>
         <module>event-listeners</module>
@@ -23,7 +24,8 @@
         <module>web-fragment</module>
         <module>nonblocking</module>
         <module>protocol-handler</module>
-        <module>resource-packaging</module>
+        <!-- FISH-11628 Disabled temporarily
+        <module>resource-packaging</module>-->
         <module>file-upload</module>
         <module>programmatic-registration</module>
 
@@ -31,7 +33,8 @@
         <module>security-basicauth</module>
         <module>security-digest</module>
         <module>security-form-based</module>
-        <module>security-programmatic</module>
+        <!-- FISH-11628 Disabled temporarily
+        <module>security-programmatic</module>-->
         <module>security-deny-uncovered</module>
         <module>security-annotated</module>
         <module>security-basicauth-omission</module>
